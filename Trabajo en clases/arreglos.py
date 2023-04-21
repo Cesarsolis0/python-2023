@@ -7,9 +7,11 @@ def decreciente(arreglo):
 decreciente(arreglo)
 
 import random
-def aleatorio(arreglo):
-    longitud=len(arreglo)
-    for i in arreglo:
-        print(random.randint(0,longitud-1))
+# def aleatorio(arreglo):
+#     longitud=len(arreglo)
+#     for i in arreglo:
+#         print(random.randint(0,longitud-1))
 
-aleatorio(arreglo) 
+# aleatorio(arreglo)
+random.shuffle(arreglo)
+print(arreglo)

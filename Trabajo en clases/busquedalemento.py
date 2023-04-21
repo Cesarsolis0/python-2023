@@ -1,7 +1,7 @@
 import array
 import random
-n=int("ingrese el tamaño del arreglo: ")
-lista = list(range(1,n))
+
+lista = list(range(1,26))
 random.shuffle(lista)
 array1 = array.array('I', lista)
 print(array1)

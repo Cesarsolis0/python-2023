@@ -11,15 +11,17 @@ def arreglo():
         nombres.append(nombre)
         rut.append(ci)
 
-    return nombres , rut
+    print(f"los nombres son : {nombres}")
+    print(f"los rut son : {rut}")
 
-def orden(nombres,rut):
+
     nombres.sort()
     rut.sort()
-    return nombres , rut
+    print(f"los nombres ordenados alfabeticamente son : {nombres}") 
+    print(f"los rut ordenados ascendentemente son : {rut}")
 
 print(arreglo())
-print(orden())
+
 
 
 
