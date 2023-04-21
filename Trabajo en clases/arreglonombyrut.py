@@ -21,12 +21,3 @@ def arreglo():
     print(f"los rut ordenados ascendentemente son : {rut}")
 
 print(arreglo())
-
-
-
-
-
-
-
-
-
