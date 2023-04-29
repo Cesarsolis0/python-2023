@@ -41,7 +41,7 @@ def suma(matriz1, matriz2):
     
 resultadosuma = suma(matriz1, matriz2)
 
-def suma(matriz1, matriz2):
+def resta(matriz1, matriz2):
     filas=len(matriz1)
     columnas=len(matriz1[0])
     resultado=[]
@@ -52,11 +52,11 @@ def suma(matriz1, matriz2):
         resultado.append(fila)
     return resultado
     
-resultadoresta = suma(matriz1, matriz2)
+resultadoresta = resta(matriz1, matriz2)
 
 
 
 print (f"la primera matriz es:{matriz1}")
 print (f"la segunda matriz es:{matriz2}")
 print(f"la suma de ambas matrizes es:{resultadosuma}")
-print(f"la suma de ambas matrizes es:{resultadoresta}")
+print(f"la resta de ambas matrizes es:{resultadoresta}")
