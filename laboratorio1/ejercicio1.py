@@ -28,10 +28,10 @@ def matriz(c2,f2):
 matriz(f2,c2)
 
 
-def suma(matriz1,matriz2):
-    matriz1=matriz(c1,c2)
+def suma(matriz1,matriz2):   #esta funcion deberia sumar las matrizes generadas anteriormente.
+    matriz1=matriz(c1,f1)
     matriz2=matriz(c2,f2)
-    proceso=matriz1+matriz2
+    proceso=matriz1 + matriz2
     print(proceso)
 
 suma(matriz(c1,f1),matriz(c2,f2))

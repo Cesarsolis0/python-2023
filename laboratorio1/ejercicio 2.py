@@ -12,12 +12,14 @@ def matriz(c1,f1):
         for j in range(columnas):
             print(random.randint(0,10),end=" ")
         print(" ")
+        
 matriz(f1,c1)
 
 def multiplicar(matriz):
     n=input("ingrese un numero:")
     filas=len(filas)
     columnas=len(columnas)
-    proceso=n*([filas],[columnas])
+    proceso=n*([filas],[columnas])#la idea era el numero n multiplique a todos los elementos que contienen las filas y columnas.
     print(proceso)
+
 multiplicar(matriz)
