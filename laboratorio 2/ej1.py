@@ -6,8 +6,8 @@
 import random
 import sys
 
-filas1=int(random.randint(2,5))
-columnas1=int(random.randint(2,5))
+filas1=int(input("Ingrese el numero de filas:"))
+columnas1=int(input("ingrese el numero de columnas:"))
 
 def matriz(filas1,columnas1):
     matriz1=[]
@@ -21,8 +21,8 @@ def matriz(filas1,columnas1):
 matriz1=matriz(filas1,columnas1)
 print(f"la primera matriz es :\n{matriz1}")
 
-filas2=int(random.randint(2,5))
-columnas2=int(random.randint(2,5))
+filas2=int(input("Ingrese el numero de filas:"))
+columnas2=int(input("ingrese el numero de columnas:"))
 
 def matriz(filas2,columnas2):
     matriz2=[]
