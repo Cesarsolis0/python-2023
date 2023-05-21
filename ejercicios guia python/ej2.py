@@ -10,9 +10,9 @@ print(f"la matriz A es:\n{A}")
 #obtenemos la inversa de la matriz creada anteriormente
 def inversa(A):
     #obtenemos el determinante de la matriz
-    proceso = (A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1]) - A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) + A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0]))
+    determinante = (A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1]) - A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) + A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0]))
     # si el determinante es 0 la matriz no es invertible por lo tanto el programa se cerrara
-    if proceso == 0:
+    if determinante == 0:
         print("La matriz A no es invertible.")
         sys.exit()
     #si el determinante es distinto de 0 ,continuamos buscando la matriz de cofactores
@@ -32,12 +32,12 @@ def inversa(A):
         for i in range(len(A)):
             fila=[]
             for j in range(len(A[0])):
-                fila.append(adjunta[j][i]/proceso)
+                fila.append(adjunta[j][i]/determinante)
             inversa.append(fila)
         return inversa
 # asignamos la matriz inversa a una variable y la imprimimos en pantalla      
 A1=inversa(A)
-print(f"la inversa de a es:\n{A1}")
+print(f"la inversa de A es:\n{A1}")
 # realizamos la multiplicacion de la matriz A y su inversa
 def multiplicar(A,A1):
     if len(A[0]) != len(A1):
@@ -56,7 +56,7 @@ def multiplicar(A,A1):
     return resultado
 # asignamos el resulatdo a una variable e imprimimos en pantalla
 AxA1=multiplicar(A,A1)
-print(f"el resultado de la multiplicacion es:\n{AxA1}")
+print(f"el resultado de la multiplicacion (AXA1) es:\n{AxA1}")
 # creamos la matriz identidad para realizar la compararcion
 I=[[1,0,0],[0,1,0],[0,0,1]]
 print(f"la matriz identidad es:\n{I}")
