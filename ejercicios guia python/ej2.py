@@ -64,6 +64,6 @@ print(f"la matriz identidad es:\n{I}")
 # si el resultado de la multiplicacion es igual a la matriz identidad la propiedad se cumple 
 # y si son distintos no se cumple
 if AxA1 == I :
-    print("la propiedad se cumple")
+    print("Como A × A−1 = I la propiedad se cumple")
 else:
     print("la propiedad no se cumple")
