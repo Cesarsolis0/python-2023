@@ -17,6 +17,17 @@ def matriz(filas,columnas):
 matriz1=matriz(filas,columnas)
 print(f"la matriz creada es:\n{matriz1}")
 
+def determinan(matriz1):
+    if len(matriz1)==1:
+            return matriz1[0][0]
+    else:
+        det=0
+        for i in range(len(matriz1)):
+            det=det+(matriz1[0][i]*determinan(matriz1[i+1:]))
+        return det
+determinante=determinan(matriz1)
+print(f"el determinante de la matriz1 es:\n{determinante}")
+
 def matrizidentidad(filas,columnas):
     identidad=[]
     for i in range(filas):

@@ -4,22 +4,8 @@
 # sea igual a la matriz
 # identidad I. Realizar un algoritmo que compruebe la siguiente propiedad:
 # A × A−1 = I, donde I es la Matriz Identidad
-import random
 import sys
-# establecemos las dimensiones para que sea una matriz cuadrada y asi poder demostrar la propiedad.
-fila=3
-columna=3
-# creamos la matriz y le agregamos elementos aleatorios entre 0 y 10
-def matriz(fila,columna):
-    matriz=[]
-    for i in range(fila):
-        filas=[]
-        for j in range(columna):
-            filas.append(int(random.randint(0,10)))
-        matriz.append(filas)
-    return matriz
-# asignamos el resultado a una variable y imprimos en pantalla
-A=matriz(fila,columna)
+A=[[10,10,0],[0,8,0],[5,0,4]]
 print(f"la matriz A es:\n{A}")
 #obtenemos la inversa de la matriz creada anteriormente
 def inversa(A):
