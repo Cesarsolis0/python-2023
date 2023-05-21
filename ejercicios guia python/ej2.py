@@ -5,6 +5,7 @@
 # identidad I. Realizar un algoritmo que compruebe la siguiente propiedad:
 # A × A−1 = I, donde I es la Matriz Identidad
 import sys
+# creamos una matriz con la cual comprobaremos la propiedad
 A=[[10,10,0],[0,8,0],[5,0,4]]
 print(f"la matriz A es:\n{A}")
 #obtenemos la inversa de la matriz creada anteriormente
