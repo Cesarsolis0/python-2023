@@ -4,18 +4,32 @@
 # sea igual a la matriz
 # identidad I. Realizar un algoritmo que compruebe la siguiente propiedad:
 # A × A−1 = I, donde I es la Matriz Identidad
-import sys
+
 # creamos una matriz cuadrada (3x3) y la imprimimos en pantalla
+
 A=[[10,10,0],[0,8,0],[5,0,4]]
-print(f"la matriz A es:\n{A}")
+
+# imprime las matrizes de forma mas ordenada,haciendo que se imprima cada fila hacia abajo.
+def imprimir_matriz(matriz):
+    for fila in matriz:
+        print(fila)
+    print()
+
+#imprimimos la matriz A
+
+print("La matriz A es:")
+imprimir_matriz(A)
+
 #obtenemos la inversa de la matriz creada anteriormente
+
 def inversa(A):
+
     #obtenemos el determinante de la matriz
     determinante = (A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1]) - A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) + A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0]))
     # si el determinante es 0 la matriz no es invertible por lo tanto el programa se cerrara
     if determinante == 0:
         print("La matriz A no es invertible.")
-        sys.exit()
+        
     #si el determinante es distinto de 0 ,continuamos buscando la matriz de cofactores
     else:
         cofactores = [[A[1][1] * A[2][2] - A[1][2] * A[2][1],-(A[1][0] * A[2][2] - A[1][2] * A[2][0]),A[1][0] * A[2][1] - A[1][1] * A[2][0]],
@@ -36,15 +50,16 @@ def inversa(A):
                 fila.append(adjunta[j][i]/determinante)
             inversa.append(fila)
         return inversa
-# asignamos la matriz inversa a una variable y la imprimimos en pantalla      
+    
+# asignamos la matriz inversa a una variable y la imprimimos en pantalla 
+     
 A1=inversa(A)
-print(f"la inversa de A es:\n{A1}")
-# realizamos la multiplicacion de la matriz A y su inversa
-def multiplicar(A,A1):
-    if len(A[0]) != len(A1):
-        print("No se pueden multiplicar las matrices. Las dimensiones no son válidas.")
-        sys.exit()
+print("La inversa A-1 es:")
+imprimir_matriz(A1)
 
+# realizamos la multiplicacion de la matriz A y su inversa
+
+def multiplicar(A,A1):
     resultado=[]
     for i in range(len(A)):
         fila=[]
@@ -55,12 +70,20 @@ def multiplicar(A,A1):
             fila.append(suma)
         resultado.append(fila)
     return resultado
+
 # asignamos el resulatdo a una variable e imprimimos en pantalla
+
 AxA1=multiplicar(A,A1)
-print(f"el resultado de la multiplicacion (AXA1) es:\n{AxA1}")
+print("El resultado de la multiplicacion (A × A−1) es:")
+imprimir_matriz(AxA1)
+
 # creamos la matriz identidad para realizar la compararcion
+
 I=[[1,0,0],[0,1,0],[0,0,1]]
-print(f"la matriz identidad es:\n{I}")
+print("La matriz identidad es:")
+imprimir_matriz(I)
+
+# comparamos el resultado de la multiplicacion entre la matriz A y su inversa A-1 con la matriz identidad I,
 # si el resultado de la multiplicacion es igual a la matriz identidad la propiedad se cumple 
 # y si son distintos no se cumple
 if AxA1 == I :

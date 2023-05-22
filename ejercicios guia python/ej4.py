@@ -4,56 +4,70 @@
 # de cero se puede utilizar el Metodo de Eliminaci ´ on Gaussiana
 import random
 
-filas=int(random.randint(3,5))
-columnas=int(random.randint(3,5))
-def matriz(filas,columnas):
-    matriz=[]
+filas=random.randint(3,5)
+columnas=random.randint(3,5)
+
+# se crea una matriz aleatoria de tamaño entre 3 a 5 con elemetos entre 1 y 9
+
+def crear_matriz(filas, columnas):
+
+    matriz = []
     for i in range(filas):
-        matriz.append([])
+        fila = []
         for j in range(columnas):
-            elemento=random.randint(1,9)
-            matriz[i].append(elemento)
+            elemento = random.randint(1,9)
+            fila.append(elemento)
+        matriz.append(fila)
     return matriz
-matriz1=matriz(filas,columnas)
-print(f"la matriz creada es:\n{matriz1}")
 
-def determinan(matriz1):
-    if len(matriz1)==1:
-            return matriz1[0][0]
+matriz=crear_matriz(filas,columnas)
+
+# imprime la matriz de forma mas ordenada,haciendo que se imprima cada fila hacia abajo.
+def imprimir_matriz(matriz):
+    for fila in matriz:
+        print(fila)
+    print()
+
+print("la matriz es:")
+imprimir_matriz(matriz)
+
+# cambia las filas,verificando si el primer elemento es 1,si lo es devuelve la matriz original,
+# sino verifica el primer elemento de cada fila de la matriz hasta encontrar alguna con el primer elemento 1
+# y la intercambia por la primera fila
+
+def cambiar_filas(matriz):
+
+    if matriz[0][0] == 1:
+        return matriz
     else:
-        det=0
-        for i in range(len(matriz1)):
-            det=det+(matriz1[0][i]*determinan(matriz1[i+1:]))
-        return det
-determinante=determinan(matriz1)
-print(f"el determinante de la matriz1 es:\n{determinante}")
+        for i in range(len(matriz)):
+            if matriz[i][0] == 1:
+                matriz[0], matriz[i] = matriz[i], matriz[0]
+        return matriz
+    
+matrizcambiada=cambiar_filas(matriz)
+print("la matriz cambiada es:")
+imprimir_matriz(matrizcambiada)
 
-def matrizidentidad(filas,columnas):
-    identidad=[]
-    for i in range(filas):
-        identidad.append([])
-        for j in range(columnas):
-            if i == j:
-                identidad[i].append(1)
-            else:
-                identidad[i].append(0)
-    return identidad
-midentidad=matrizidentidad(filas,columnas)
-print(f"la matriz identidad es:\n{midentidad}")
+# si la funcion anterior devuelve la matriz original,este funcion hara que le primer elemento de la matriz sea 1,
+# primero calcula el numero por el que dividira la primera fila para que le primer elemento de 1 ,dividiendo el 
+# primer elemento de la matriz en 1,luego recorre toda la fila dividiendp cada numero por el divisor calculado.
+# Y si la matriz ya tiene como primer elemeto un 1 devuelve la matriz original.
 
-def matrizinversa(matriz1):
-    filas=len(matriz1)
-    columnas=len(matriz1[0])
-    minversa=[]
-    for i in range(filas):
-        minversa.append([])
-        for j in range(columnas):
-            minversa[i].append(0)
-            for i in range(filas):
-                minversa[i][j]+=matriz1[i][j]
-                minversa[i][j]/=matriz1[i][i]
-    return minversa
-inversa=matrizinversa(matriz1)
+def dividir_filas(matriz):
+
+    if matriz[0][0] != 1:
+        divisor = matriz[0][0] / 1 
+        for i in range(len(matriz[0])):
+            matriz[0][i] = matriz[0][i] / divisor 
+        return matriz
+    else:
+        return matriz
+
+matrizdividida= dividir_filas(matriz)
+print("la matriz dividida es:")
+imprimir_matriz(matrizdividida)
+    
 
 
 
