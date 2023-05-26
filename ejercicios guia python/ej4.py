@@ -24,7 +24,7 @@ matriz=crear_matriz(filas,columnas)
 
 # imprime la matriz de forma mas ordenada,haciendo que se imprima cada fila hacia abajo.
 def imprimir_matriz(matriz):
-    for fila in matriz:
+    for fila in matriz: 
         print(fila)
     print()
 
